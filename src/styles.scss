@@ -1,0 +1,109 @@
+$lilac: #ae81ff;
+$magenta:  #f92672;
+$whiteish: #f8f8f2;
+$brightblue: #66d9ef;
+$butter: #e6db74;
+$cobblestone: #75715e;
+$darkgrey:  #272822;
+$printable: #212529;
+
+$small-min-width: 768px;
+$medium-min-width: 992px;
+$large-min-width: 1200px;
+
+body#katecodes  {
+        background: $cobblestone;
+    
+        .page{
+            max-width: 1080px;
+            min-height: fit-content;
+            height: 98vh;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: auto;
+            margin-right: auto;
+            background: $darkgrey;   
+            color:$whiteish;
+            font-family: 'Roboto Mono', monospace;    
+
+            .bar {
+                align-content: center;    
+
+                .bar-content{
+                    margin: 0 auto;
+                    width: fit-content;
+                }
+
+                &.bar-title{
+                    padding: 2em 1em;
+                }
+
+                &.bar-navigation{
+                    border-top: 1px solid $brightblue;
+                    border-bottom:  1px solid $brightblue;
+                    padding: 1em 1em;
+                }    
+            }
+
+            .page-content{
+                padding: 2em 2em;
+            }
+            
+            .keyword{
+                color: $brightblue
+            }
+            
+            .identifier + .identifier::before {
+                content:".";
+                color:$magenta;
+            }
+
+            .string{
+                &::before, &::after{
+                content:"\"";
+                color: $butter
+                }
+            }
+
+            .operator{
+                color: $magenta;
+            }
+            
+            .comment{
+                color: $cobblestone;
+            }
+
+            .link {
+                color:$magenta;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            ul.array{
+                margin: inherit;
+                padding: 0px;
+                display: inline-block;
+            
+                &::before{
+                    content: "{";
+                }
+            
+                &::after{
+                    content: "}";
+                }
+            
+                li{
+                    display: inline-block;
+                    list-style-type: none;
+            
+                    & ~ li::before {
+                        content: ", ";
+                    }
+                }    
+            }  
+
+            h5 + h5{
+                font-style: italic;
+            }
+        }
+    }

@@ -1,0 +1,28 @@
+
+@import 'src/styles.scss';
+
+.resume-component {
+    font-family: Roboto;
+
+    .header{
+        border-bottom:  1px solid $whiteish;
+        margin-bottom: 1em;
+    }
+
+    @media screen and (min-width: $small-min-width){
+        .contact-info   {
+            text-align: right;
+        }
+    }
+
+    @media print {
+       h1, h2, h3, h4,h5, h6{
+            color:$printable !important;        
+       }
+
+       color:$printable !important;    
+        .contact-info   {
+            text-align: right;
+        }
+    }
+}
